@@ -13,7 +13,12 @@ io.on("connection", (Socket) => {
     Socket.on("send_message", (data) => {
         userSocket.broadcast.emit("receive_message", data)
     })
+
+    Socket.on('user_on', (data)=>{
+        userSocket.broadcast.emit("users", data)
+    })
 })
+
 
 app.get('/', (req, res) => {
    res.send("Node está rodando, veja so que beleza");

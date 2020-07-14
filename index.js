@@ -4,7 +4,7 @@ const app = express();
 
 const http = require('http').createServer(app);
 
-var server = app.listen(process.env.PORT||8080, ()=>{
+var server = app.listen(process.env.PORT, ()=>{
     console.log("Iniciado")
 })
 var io = require('socket.io').listen(server);
